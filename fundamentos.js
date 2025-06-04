@@ -7,6 +7,9 @@ const esPar = (numero) => {
   }
 };
 
+const esPar2 = (numero) =>
+  `${numero} es un número ${numero % 2 === 0 ? "par" : "impar"}.`;
+
 // console.log(esPar(0));
 // console.log(esPar(3));
 // console.log(esPar(6));
@@ -19,6 +22,9 @@ const puedeVotar = (edad) => {
     return `usted tiene ${edad}, no puede votar.`;
   }
 };
+
+const puedeVotar2 = (edad) =>
+  `usted tiene ${edad}, ${edad >= 18 ? "puede votar" : "no puede votar"}.`;
 
 // console.log(puedeVotar(17));
 // console.log(puedeVotar(18));
@@ -34,6 +40,8 @@ function sumaNumeros(limite) {
   return acumulador;
 }
 
+const sumaNumeros2 = (n) => (n * (n + 1)) / 2;
+
 // console.log(sumaNumeros(5));
 // console.log(sumaNumeros(6));
 // console.log(sumaNumeros(10));
@@ -45,6 +53,14 @@ const tablaMultiplicar = (numero) => {
     resultado += `${numero} X ${i} = ${numero * i}\n`;
   }
   return resultado;
+};
+
+const tablaMultiplicar2 = (numero) => {
+  const lineas = [];
+  for (let i = 1; i <= 10; i++) {
+    lineas.push(`${numero} x ${i} = ${numero * i}`);
+  }
+  return lineas.join("\n");
 };
 
 // console.log(tablaMultiplicar(2));
@@ -60,6 +76,13 @@ const cuantosMultiplosTres = function (limite) {
     }
   }
   return `entre el 1 y el ${limite}: hay ${acumulador} multiplos de 3.`;
+};
+
+const cuantosMultiplosTres2 = (limite) => {
+  const multiplos = Array.from({ length: limite }, (_, i) => i + 1).filter(
+    (n) => n % 3 === 0,
+  );
+  return `entre el 1 y el ${limite}: hay ${multiplos.length} múltiplos de 3.`;
 };
 
 // console.log(cuantosMultiplosTres(20));
